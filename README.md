@@ -1,6 +1,6 @@
 # OnJuno
 
-Project fetches data from API and displays it in UI
+App fetches data from API and displays it in UI
 
 Tools/Libraries used:
 1. MVVM Architecture
