@@ -25,8 +25,7 @@ import com.dev.democompose.viewmodel.valuevm.CryptoValueViewModel
 
 @Composable
 fun ThirdUI(
-    viewModelValue: CryptoValueViewModel = hiltViewModel(),
-    viewModelEmpty: CryptoEmptyViewModel = hiltViewModel()
+    viewModelValue: CryptoValueViewModel = hiltViewModel()
 ) {
     val stateValue = viewModelValue.state.value
 
@@ -35,14 +34,13 @@ fun ThirdUI(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(20.dp),
+                    .padding(10.dp),
             ) {
-
                 Image(
                     painterResource(id = R.drawable.btc),
                     //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                     contentDescription = null,
-                    modifier = Modifier.size(64.dp)
+                    modifier = Modifier.size(40.dp)
                 )
 
                 Spacer(modifier = Modifier.width(10.0.dp))
@@ -57,7 +55,6 @@ fun ThirdUI(
                         style = MaterialTheme.typography.body2
                     )
                 }
-
                 Text(text = "$"+"${stateValue.cryptoValue?.crypto_balance?.current_bal_in_usd}", fontWeight = FontWeight.Bold, textAlign = TextAlign.End, modifier = Modifier.align(Alignment.CenterVertically))
             }
 
@@ -69,7 +66,7 @@ fun ThirdUI(
             ) {
                 Text(
                     text = "Your Crypto Holdings",
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
 
@@ -84,23 +81,21 @@ fun ThirdUI(
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(10.dp),
+                                .padding(5.dp),
                         ) {
-                            //AsyncImage(model = crypto_holding.logo, contentDescription = null)
-
                             Image(
                                 painterResource(id = R.drawable.btc),
                                 //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .size(64.dp)
+                                    .size(40.dp)
                                     .align(Alignment.CenterVertically)
                             )
 
                             Spacer(modifier = Modifier.width(10.0.dp))
 
                             Column(verticalArrangement = Arrangement.Center, modifier = Modifier.weight(1f)) {
-                                Text(text = crypto_holding.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                                Text(text = crypto_holding.title, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                                 Text(text = crypto_holding.current_bal_in_token + " " + crypto_holding.title)
                             }
                             Text(text = "$"+ crypto_holding.current_bal_in_usd, color = Color.Black, fontWeight = FontWeight.Bold, textAlign = TextAlign.End, modifier = Modifier.align(Alignment.CenterVertically))
@@ -112,14 +107,14 @@ fun ThirdUI(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp),
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.Start
             ) {
                 Text(
                     text = "Recent Transactions",
                     modifier = Modifier.weight(1f),
                     textAlign = TextAlign.Start,
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
@@ -138,30 +133,24 @@ fun ThirdUI(
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(10.dp),
+                                .padding(5.dp),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
-//                            Image(
-//                                painter = rememberAsyncImagePainter(crypto_holding.txn_logo),
-//                                contentDescription = null
-//                            )
-
                             Image(
                                 painterResource(id = R.drawable.btc),
                                 //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .size(64.dp)
+                                    .size(40.dp)
                                     .align(Alignment.CenterVertically)
                             )
 
                             Spacer(modifier = Modifier.width(10.0.dp))
 
                             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center) {
-                                Text(text = crypto_holding.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                                Text(text = crypto_holding.title, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                                 Text(text = crypto_holding.txn_time)
                             }
-
                             Text(text = "$"+crypto_holding.txn_amount, color = Color.Cyan, fontWeight = FontWeight.Bold, modifier = Modifier.align(Alignment.CenterVertically), textAlign = TextAlign.End)
                         }
                     }
@@ -171,14 +160,14 @@ fun ThirdUI(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp),
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.Start
             ) {
                 Text(
                     text = "Current Prices",
                     modifier = Modifier.weight(1f),
                     textAlign = TextAlign.Start,
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -194,22 +183,16 @@ fun ThirdUI(
                         Column(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(10.dp)
+                                .padding(5.dp)
                         ) {
-//                            Image(
-//                                painter = rememberAsyncImagePainter(crypto_holding.logo),
-//                                contentDescription = null
-//                            )
-
                             Image(
                                 painterResource(id = R.drawable.btc),
                                 //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                                 contentDescription = null,
-                                modifier = Modifier.size(64.dp)
+                                modifier = Modifier.size(40.dp)
                             )
-
-                            Text(text = crypto_holding.title, )
-                            Text(text = "$"+crypto_holding.current_price_in_usd, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                            Text(text = crypto_holding.title, fontSize = 16.sp)
+                            Text(text = "$"+crypto_holding.current_price_in_usd, fontSize = 17.sp, fontWeight = FontWeight.Bold)
                         }
                     }
                 }

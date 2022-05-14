@@ -57,9 +57,8 @@ fun SecondUI(
                     painterResource(id = R.drawable.btc),
                     //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                     contentDescription = null,
-                    modifier = Modifier.size(64.dp)
+                    modifier = Modifier.size(40.dp)
                 )
-
 
                 Column {
                     Text(
@@ -91,12 +90,12 @@ fun SecondUI(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp),
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.Start
             ) {
                 Text(
                     text = "Your Crypto Holdings",
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
 
@@ -111,7 +110,7 @@ fun SecondUI(
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(10.dp),
+                                .padding(5.dp),
                         ) {
                             //AsyncImage(model = crypto_holding.logo, contentDescription = null)
 
@@ -120,14 +119,14 @@ fun SecondUI(
                                 //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .size(64.dp)
+                                    .size(40.dp)
                                     .align(Alignment.CenterVertically)
                             )
 
                             Spacer(modifier = Modifier.width(10.0.dp))
 
-                            Text(text = crypto_holding.title, fontWeight = FontWeight.Bold, modifier = Modifier
-                                .weight(0.7f)
+                            Text(text = crypto_holding.title, fontSize = 16.sp, fontWeight = FontWeight.Bold, modifier = Modifier
+                                .weight(0.5f)
                                 .align(Alignment.CenterVertically))
 
                             OutlinedButton(
@@ -135,7 +134,7 @@ fun SecondUI(
                                 shape = RoundedCornerShape(24.dp),
                                 modifier = Modifier
                                     .wrapContentSize()
-                                    .weight(0.4f)
+                                    .weight(0.5f)
                                     .align(Alignment.CenterVertically),
                                 border = BorderStroke(
                                     width = 1.dp,
@@ -168,14 +167,14 @@ fun SecondUI(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp),
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.Start
             ) {
                 Text(
                     text = "Recent Transactions",
                     modifier = Modifier.weight(1f),
                     textAlign = TextAlign.Start,
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
@@ -207,14 +206,14 @@ fun SecondUI(
                                 //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .size(64.dp)
+                                    .size(40.dp)
                                     .align(Alignment.CenterVertically)
                             )
 
                             Spacer(modifier = Modifier.width(10.0.dp))
 
                             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center) {
-                                Text(text = crypto_holding.title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                                Text(text = crypto_holding.title, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                                 Text(text = crypto_holding.txn_time)
                             }
 
@@ -227,14 +226,14 @@ fun SecondUI(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp),
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.Start
             ) {
                 Text(
                     text = "Current Prices",
                     modifier = Modifier.weight(1f),
                     textAlign = TextAlign.Start,
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -252,20 +251,15 @@ fun SecondUI(
                                 .fillMaxWidth()
                                 .padding(10.dp)
                         ) {
-//                            Image(
-//                                painter = rememberAsyncImagePainter(crypto_holding.logo),
-//                                contentDescription = null
-//                            )
-
                             Image(
                                 painterResource(id = R.drawable.btc),
                                 //painter = rememberAsyncImagePainter("https://ibb.co/LZSmRrn"),
                                 contentDescription = null,
-                                modifier = Modifier.size(64.dp)
+                                modifier = Modifier.size(40.dp)
                             )
 
-                            Text(text = crypto_holding.title, )
-                            Text(text = "$"+crypto_holding.current_price_in_usd, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                            Text(text = crypto_holding.title, fontSize = 16.sp)
+                            Text(text = "$"+crypto_holding.current_price_in_usd, fontSize = 17.sp, fontWeight = FontWeight.Bold)
                         }
                     }
                 }
@@ -273,26 +267,3 @@ fun SecondUI(
         }
     }
 }
-
-//@Composable
-//fun SvgImageSample() {
-////    val painter = rememberAsyncImagePainter(
-////        model = ImageRequest.Builder(LocalContext.current)
-////            .decoderFactory(SvgDecoder.Factory())
-////            .data("https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg") // Set the target size to load the image at.
-////            .build()
-////    )
-//
-//    val svgLink = "https://cdn.onjuno.com/crypto-logo/BTC.svg"
-//    val imageLoader = ImageLoader.Builder(LocalContext.current)
-//        .components {
-//            add(SvgDecoder.Factory())
-//        }
-//        .build()
-//
-//    Image(
-//        painter = painter,
-//        contentDescription = null,
-//    modifier = Modifier.size(64.dp)
-//    )
-//}
